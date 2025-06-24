@@ -1,59 +1,162 @@
-# MyWorkspace
+# ⏰ ng-timepick
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+A **highly customizable, modern Angular time picker component** designed for seamless integration and effortless user experience. `ng-timepick` empowers developers to deliver elegant time selection UIs that blend perfectly with any design system.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
-```
+- **12-hour clock face** with AM/PM toggle
+- **Manual time input** with validation and error feedback
+- **Interactive clock dial** for intuitive hour and minute selection
+- **Reactive outputs** for easy integration with forms and parent components
+- **Accessible and keyboard-friendly**
+- **Fully styleable** via SCSS for effortless theming
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚀 Installation
 
 ```bash
-ng generate --help
+npm install ng-timepick
 ```
 
-## Building
+---
 
-To build the project run:
+## 🛠️ Usage
+
+### 1. Import the Module
+
+Add `NgTimepickModule` to your feature or root module:
+
+```typescript
+import { NgTimepickModule } from 'ng-timepick';
+
+@NgModule({
+  imports: [
+    NgTimepickModule,
+    // ...other imports
+  ]
+})
+export class AppModule {}
+```
+
+### 2. Add the Component
+
+Insert the time picker in your template:
+
+```html
+<lib-ng-timepick
+  (timeSelected)="onTimeSelected($event)"
+  (timePickerClosed)="onTimePickerClosed()"
+></lib-ng-timepick>
+```
+
+### 3. Handle Output Events
+
+```typescript
+onTimeSelected(time: string) {
+  // time is in 'HH:mm' 24-hour format
+  console.log('Selected time:', time);
+}
+
+onTimePickerClosed() {
+  // Handle picker close event
+}
+```
+
+---
+
+## 🎨 Customization
+
+### Styling
+
+The component uses BEM-inspired SCSS classes for easy customization. Override styles in your global stylesheet or use Angular's `::ng-deep` selector for deep styling.
+
+```scss
+::ng-deep .timepicker-container {
+  background: #222;
+  color: #fff;
+  border-radius: 12px;
+}
+```
+
+### Inputs & Outputs
+
+- **Outputs:**
+  - `timeSelected: EventEmitter<string>` — Emits the selected time in `HH:mm` format.
+  - `timePickerClosed: EventEmitter<void>` — Emits when the picker is closed (e.g., clicking outside).
+
+---
+
+## 🧩 API Reference
+
+| Output             | Type                  | Description                                 |
+|--------------------|----------------------|---------------------------------------------|
+| `timeSelected`     | `EventEmitter<string>`| Emits the selected time in `HH:mm` format   |
+| `timePickerClosed` | `EventEmitter<void>`  | Emits when the picker is closed             |
+
+---
+
+## 🧪 Testing
+
+Run unit tests with:
 
 ```bash
-ng build
+ng test ng-timepick
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🏗️ Building
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To build the library for distribution:
 
 ```bash
-ng test
+ng build ng-timepick
 ```
 
-## Running end-to-end tests
+The build artifacts will be located in the `dist/ng-timepick/` directory.
 
-For end-to-end (e2e) testing, run:
+---
+
+## 📦 Publishing
+
+After building, publish to npm:
 
 ```bash
-ng e2e
+cd dist/ng-timepick
+npm publish
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📚 Advanced Usage
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Reactive Forms Integration:** Use the output events to bind the selected time to your form controls.
+- **Dynamic Styling:** Leverage Angular's theming capabilities or CSS variables for runtime style changes.
+- **Accessibility:** The component is designed with accessibility in mind, but you can further enhance it as needed.
+
+---
+
+## 📝 License
+
+MIT © [R Ram Shankar](https://github.com/ram-shankar58)
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to check [issues page](https://github.com/ram-shankar58/ng-timepick/issues).
+
+---
+
+## 📎 Links
+
+- [GitHub Repository](https://github.com/ram-shankar58/ng-timepick)
+- [Angular CLI Documentation](https://angular.dev/tools/cli)
+
+---
+
+> **ng-timepick** — The elegant Angular time picker for modern web apps.
