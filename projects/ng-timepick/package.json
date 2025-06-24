@@ -1,6 +1,6 @@
 {
   "name": "ng-timepick",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A customisable Angular time picker component library built to suit user's styling and design preferences.",
   "author": "R Ram Shankar",
   "license": "MIT",
