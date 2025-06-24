@@ -1,0 +1,27 @@
+{
+  "name": "ng-timepick",
+  "version": "0.0.1",
+  "description": "A customisable Angular time picker component library built to suit user's styling and design preferences.",
+  "author": "R Ram Shankar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ram-shankar58/ng-timepick.git"
+  },
+  "homepage": "https://github.com/ram-shankar58/ng-timepick#readme",
+  "keywords": [
+    "angular",
+    "timepicker",
+    "component",
+    "library",
+    "ng-timepick"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
